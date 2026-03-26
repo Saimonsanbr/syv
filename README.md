@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/logo.png" width="120" alt="SYV logo" />
+
 # SYV — Save Your Video
 
 **A clean, interactive CLI for downloading videos — one command, no fuss**
