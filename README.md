@@ -66,7 +66,7 @@ brew install gum
 **One-liner:**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Saimosanbr/syv/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Saimonsanbr/syv/refs/heads/main/install.sh | bash
 ```
 
 **Or clone the repo:**
