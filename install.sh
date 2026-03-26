@@ -5,7 +5,7 @@ set -e
 # -----------------------------
 # Configuração — ajuste para o seu usuário/repo
 # -----------------------------
-GITHUB_USER="yourusername"
+GITHUB_USER="Saimonsanbr"
 GITHUB_REPO="syv"
 BRANCH="main"
 RAW_BASE="https://raw.githubusercontent.com/$GITHUB_USER/$GITHUB_REPO/$BRANCH"

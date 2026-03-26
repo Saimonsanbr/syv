@@ -1,40 +1,76 @@
+<div align="center">
+
 # SYV — Save Your Video
 
-A clean, interactive CLI wrapper for `yt-dlp`.
+**A clean, interactive CLI for downloading videos — one command, no fuss**
 
-Some people say it means "Steal Your Video".
+[![License](https://img.shields.io/badge/license-MIT-black?style=flat-square)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-black?style=flat-square)](#)
+[![Powered by yt-dlp](https://img.shields.io/badge/powered_by-yt--dlp-black?style=flat-square)](https://github.com/yt-dlp/yt-dlp)
 
-They're wrong.
-
-...probably.
-
----
-
-## ✨ Features
-
-- Interactive menus with arrow-key navigation (powered by [gum](https://github.com/charmbracelet/gum))
-- Clean output — no log spam
-- YouTube quality selection: Default, 1080p, MP3
-- Support for YouTube, Twitter/X, Instagram, TikTok
-- Auto dependency check + Homebrew installer
-- Custom download folder per session
+</div>
 
 ---
 
-## 📋 Requirements
+## What is this?
 
-- macOS (Homebrew)
-- [`yt-dlp`](https://github.com/yt-dlp/yt-dlp)
-- [`gum`](https://github.com/charmbracelet/gum)
+SYV is a terminal app that wraps `yt-dlp` with a clean, interactive interface.
 
-Missing deps are detected automatically and offered for installation on first run.
+Paste a URL, pick your quality, get a file.
+
+No browser extensions. No GUIs to install. Just a shell script with arrow-key navigation powered by [gum](https://github.com/charmbracelet/gum).
 
 ---
 
-## 🚀 Install
+## Supported platforms
+
+| Platform | Support |
+|---|---|
+| YouTube | ✅ Default, 1080p, MP3 |
+| Twitter / X | ✅ |
+| Instagram | ✅ |
+| TikTok | ✅ |
+
+> **Windows** — not yet supported. Coming soon.
+
+---
+
+## Requirements
+
+- macOS or Linux
+- [Homebrew](https://brew.sh) (macOS) or your distro's package manager (Linux)
+- `yt-dlp` and `gum` — installed automatically on first run (macOS)
+
+**Linux users** — install deps manually before running:
 
 ```bash
-git clone https://github.com/yourusername/syv.git
+# Debian / Ubuntu
+sudo apt install yt-dlp
+brew install gum   # or: go install github.com/charmbracelet/gum@latest
+
+# Arch
+sudo pacman -S yt-dlp
+brew install gum
+
+# Fedora
+sudo dnf install yt-dlp
+brew install gum
+```
+
+---
+
+## Install
+
+**One-liner:**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Saimosanbr/syv/main/install.sh | bash
+```
+
+**Or clone the repo:**
+
+```bash
+git clone https://github.com/Saimosanbr/syv.git
 cd syv
 chmod +x install.sh
 ./install.sh
@@ -46,36 +82,45 @@ Then reload your shell:
 source ~/.zshrc   # or ~/.bashrc
 ```
 
-And run:
+---
+
+## Usage
 
 ```bash
 yt
 ```
 
+1. Enter a destination folder — or press Enter to use the current directory
+2. Choose a platform
+3. Choose quality (YouTube only: Default / 1080p / MP3)
+4. Paste the video URL and hit Enter
+5. Done ✅
+
+After each download, you can:
+
+- **Download another** — keeps the same platform and quality, just paste a new URL
+- **Change platform / quality** — goes back to the beginning
+- **Exit**
+
 ---
 
-## 🗑️ Uninstall
+## Uninstall
 
 ```bash
 rm -rf ~/.syv
-# Then remove the alias and PATH lines from ~/.zshrc (or ~/.bashrc)
+```
+
+Then remove these lines from your `~/.zshrc` (or `~/.bashrc`):
+
+```bash
+# SYV — Save Your Video
+export PATH="$HOME/.syv:$PATH"
+alias yt="$HOME/.syv/syv"
 ```
 
 ---
 
-## 🛠️ Usage
-
-Just type `yt` and follow the prompts:
-
-1. Enter a destination folder (or press Enter to use the current directory)
-2. Choose a platform
-3. Choose quality (YouTube only)
-4. Paste the video URL
-5. Done ✅
-
----
-
-## 📁 Project Structure
+## Project structure
 
 ```
 syv/
@@ -86,6 +131,13 @@ syv/
 
 ---
 
-## 📄 License
+## Powered by
+
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) — the actual downloader
+- [gum](https://github.com/charmbracelet/gum) — interactive terminal UI
+
+---
+
+## License
 
 MIT
